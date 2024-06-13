@@ -30,7 +30,7 @@ def get_price(message: telebot.types.Message):
     quote, base, amount = values
     total_base = CurrensyConverter.get_price(quote, base, amount)
 
-    m = float(round(total_base)*int(amount))
+    m = float(total_base*int(amount))
     text = f'Цена {amount} {quote} в {base} - {m}'
     bot.send_message(message.chat.id, text)
 
